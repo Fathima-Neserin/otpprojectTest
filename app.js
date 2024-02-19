@@ -2,13 +2,16 @@ const express=require('express');
 const cors=require('cors');
 const bodyParser=require('body-parser');
 const cookieParser=require('cookie-parser');
+const path=require('path')
 
 const app=new express();
 
 require('dotenv').config();
 const morgan=require('morgan');
 
+// Routes
 
+const OtpRoutes=require('./routes/otpRoutes')
 
 
 
@@ -26,34 +29,14 @@ app.use(bodyParser.json());
 
 
 
-var nodemailer = require('nodemailer');
+ 
+app.use('/otp', OtpRoutes)
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'fneserin@gmail.com',
-    pass: 'oyks mrwk omez ikyy'
-  }
-});
 
-var mailOptions = {
-  from: 'fneserin@gmail.com',
-  to: 'fathimanezrin2001@gmail.com',
-  subject:'OTP for your request is 123 456'
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
 
 app.use(morgan('dev'));
-app.use(cors({
-    origin:process.env.CORS_ORIGIN
-}))
+app.use(cors());
+
 
 const PORT=process.env.PORT
 

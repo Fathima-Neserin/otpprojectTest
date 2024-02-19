@@ -5,9 +5,49 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(131, 162, 182);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.styleform{
+  margin-left: 40%;
+  margin-top: 8%;
+  width: 300px;
+  height: 350px;
+  background-color: rgb(12, 95, 88);
+}
+
+#outlined-reqquired{
+  padding:3%;
+  color: rgb(254, 255, 254);
+
+}
+
+#outlined-required:hover{
+  background-color: rgb(254, 255, 254);
+  
+
+}
+
+.input{
+  padding-top: 30%;
+}
+
+#btn{
+  background-color:  rgb(254, 255, 254);
+  color: rgb(12, 95, 88);
+  text-decoration: none;
+}
+
+#btn:hover{
+   background-color: rgb(12, 95, 88);
+   color:rgb(254, 255, 254);
+}
+
+.img{
+  width: 95%;
 }
